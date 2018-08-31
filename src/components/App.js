@@ -5,8 +5,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>A really awesome and amazing React/Redux app</h1>
-        <p>You'd be hard-pressed to find a better one.</p>
+        <h1>Redux Todo</h1>
+        <p>Now with 60% more unnecessarily powerful technology!</p>
+        <Form />
+        <List />
       </div>
     );
   }
