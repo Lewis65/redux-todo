@@ -1,19 +1,20 @@
 export const ADD_TODO = 'ADD_TODO';
 
-export function addTodo(text) {
+export function addTodo(id, text) {
     return {
         type: ADD_TODO,
         payload: {
-            text
+            text,
+            id
         }
     }
 }
 
-export const DELETE_TODO = 'DELETE_TODO';
+export const TOGGLE_TODO = 'TOGGLE_TODO';
 
-export function deleteTodo(id){
+export function toggleTodo(id){
     return {
-        type: DELETE_TODO,
+        type: TOGGLE_TODO,
         payload: {
             id
         }
