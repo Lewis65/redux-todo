@@ -4,11 +4,7 @@ class List extends Component {
   render() {
     return (
       <div className="List">
-            <ul>
-                <li>
-                    I'm a todo item~
-                </li>
-            </ul>
+            <Todo />
       </div>
     );
   }

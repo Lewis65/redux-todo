@@ -12,3 +12,20 @@
   border: none;
   border-radius: 4px;
 }
+
+.Todo-text, .Todo-toggle {
+  border: #DDD 2px solid;
+}
+
+.Todo-text {
+  border-radius: 6px;
+  padding: 6px;
+}
+
+.Todo-toggle {
+  background-color: #EBC;
+  border-radius: 8px;
+  height: 16px;
+  width: 16px;
+  padding: 2px;
+}
