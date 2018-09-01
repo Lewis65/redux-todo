@@ -5,10 +5,10 @@ class Todo extends Component {
     return (
       <div className="Todo">
           <div className="Todo-toggle"></div>
-          <div className="Todo-text"></div>
+          <div className="Todo-text">Hello!</div>
       </div>
     );
   }
 }
 
-export default List;
+export default Todo;

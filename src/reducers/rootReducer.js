@@ -15,8 +15,8 @@ function rootReducer(state = initialState, action) {
             });
         case TOGGLE_TODO:
             return Object.assign({}, state, {
-                todos: state.todos.map((todo, index) => {
-                    if(id === action.id){
+                todos: state.todos.map((todo) => {
+                    if(todo.id === action.payload.id){
                         return Object.assign({}, todo, {
                             complete: !todo.complete
                         })
