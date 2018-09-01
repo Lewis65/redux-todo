@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class List extends Component {
   render() {
     return (
-      <div>
+      <div className="List">
             <ul>
                 <li>
                     I'm a todo item~

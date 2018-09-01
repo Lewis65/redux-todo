@@ -6,7 +6,7 @@ import List from './List';
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="App">
         <h1>Redux Todo</h1>
         <p>Now with 60% more unnecessarily powerful technology!</p>
         <Form />
