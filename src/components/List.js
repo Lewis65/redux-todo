@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
 import Todo from './Todo';
 
-class List extends Component {
-  render() {
-    return (
-      <div className="List">
-            <Todo />
-      </div>
-    );
-  }
-}
+const List = ({ todos, onTodoClick }) => (
+  <div className="List">
+    {todos.map((todo, id) => (
+      <Todo id={id} {...todo} onClick={() => onTodoClick(id)} />
+    ))}
+  </div>
+);
 
 export default List;

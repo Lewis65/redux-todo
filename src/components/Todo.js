@@ -1,14 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Todo extends Component {
-  render() {
-    return (
-      <div className="Todo">
-          <div className="Todo-toggle"></div>
-          <div className="Todo-text">Hello!</div>
-      </div>
-    );
-  }
-}
+const Todo = ({ onClick, status, text }) => (
+  <div className="Todo" onClick={onClick}>
+    <div className={"Todo-toggle " + status}></div>
+    <div className="Todo-text">{text}</div>
+  </div>
+)
 
 export default Todo;
