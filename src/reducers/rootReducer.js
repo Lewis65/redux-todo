@@ -1,7 +1,8 @@
 import { ADD_TODO, TOGGLE_TODO } from '../actions/actions.js';
 
 const initialState = {
-    todos: []
+    todos: [],
+    input: ""
 }
 
 function rootReducer(state = initialState, action) {

@@ -1,10 +1,31 @@
 import React from 'react';
+import { ADD_TODO } from '../actions/actions';
+import { connect } from 'react-redux';
 
-const Form = () => (
+const Form = ({ handleAddTodo, input }) => (
   <div className="Form">
-    <input placeholder="Next on the list..."></input>
-    <button type="submit">Submit</button>
+    <input placeholder="Next on the list..." value={input}></input>
+    <button type="submit" onClick={handleAddTodo}>Submit</button>
   </div>
 )
 
-export default Form;
+const mapStateToProps = state => {
+  return {
+    input: state.input
+  }
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  handleAddTodo: (e) => {
+    e.preventDefault();
+    const { input } = ownProps;
+    dispatch({
+      type: ADD_TODO,
+      payload: {
+        text: input
+      }
+    })
+  }
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Form);
