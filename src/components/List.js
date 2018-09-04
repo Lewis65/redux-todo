@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import Todo from './Todo';
 import { connect } from 'react-redux';
+import {TOGGLE_TODO} from '../actions/actions'
 
-const List = ({ todos }) => (
+const List = () => (
   <div className="List">
-    {todos.map((todo, id) => (
-      <Todo id={id} {...todo} onClick={handleTodoClick(id)} />
+    {this.props.todos.map((todo, index) => (
+      <Todo id={index} text={todo.text} status={todo.status} onClick={this.props.handleTodoClick(index)} />
     ))}
   </div>
 );
-
-connect(List, {todos});
 
 const mapStateToProps = state => {
   return {
