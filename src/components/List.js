@@ -3,11 +3,17 @@ import Todo from './Todo';
 import { connect } from 'react-redux';
 import {TOGGLE_TODO} from '../actions/actions'
 
-const List = () => (
+const List = (props) => (
   <div className="List">
-    {this.props.todos.map((todo, index) => (
-      <Todo id={index} text={todo.text} status={todo.status} onClick={this.props.handleTodoClick(index)} />
-    ))}
+  {console.log(props)}
+    {
+      
+      props.todos.map((todo, index) => {
+        return (
+          <Todo id={index} text="banana" status="incomplete"  onClick={props.handleTodoClick(index)} />
+        )
+      });
+    }
   </div>
 );
 

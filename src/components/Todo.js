@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Todo = () => (
+const Todo = (props) => (
   <div className="Todo">
-    <div className={"Todo-toggle Todo-" + (this.props.status ? "complete" : "incomplete")}></div>
-    <div className="Todo-text">{this.props.text}</div>
+    <div className={"Todo-toggle Todo-" + (props.status ? "complete" : "incomplete")}></div>
+    <div className="Todo-text">{props.text}</div>
   </div>
 )
 
