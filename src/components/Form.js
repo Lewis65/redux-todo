@@ -2,12 +2,39 @@ import React from 'react';
 import { ADD_TODO } from '../actions/actions';
 import { connect } from 'react-redux';
 
-const Form = (props) => (
+class Form  extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      input: ""
+    }
+    this.handleAddTodo = this.handleAddTodo.bind(this);
+  }
+
+  handleAddTodo(){
+    this.props.handleAddTodo(this.state.input);
+    this.setState({
+      input: ""
+    })
+  }
+
+  render(){
+    return(
+      <div className="Form">
+        <input placeholder="Next on the list..." value={this.state.input} onChange={(e) => this.setState({input: e.target.value})}></input>
+        <button type="submit" onClick={this.handleAddTodo}>Submit</button>
+      </div>
+    )
+  }
+}
+
+/*const Form = (props) => (
   <div className="Form">
-    <input placeholder="Next on the list..." value={props.input}></input>
-    <button type="submit" onClick={props.handleAddTodo}>Submit</button>
+    <input placeholder="Next on the list..." value={props.input} onChange={() => props.handleChange}></input>
+    <button type="submit" onClick={() => props.handleAddTodo}>Submit</button>
   </div>
-)
+)*/
 
 const mapStateToProps = state => {
   return {
@@ -16,12 +43,11 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = (dispatch) => ({
-  handleAddTodo: (e) => {
-    e.preventDefault();
+  handleAddTodo: (input) => {
     dispatch({
       type: ADD_TODO,
       payload: {
-        text: e.target.value
+        text: input
       }
     })
   }

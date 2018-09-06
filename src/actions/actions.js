@@ -1,22 +1,21 @@
 export const ADD_TODO = 'ADD_TODO';
 
-export function addTodo(id, text) {
+export function addTodo(text) {
     return {
         type: ADD_TODO,
         payload: {
-            text,
-            id
+            text
         }
     }
 }
 
 export const TOGGLE_TODO = 'TOGGLE_TODO';
 
-export function toggleTodo(id){
+export function toggleTodo(index){
     return {
         type: TOGGLE_TODO,
         payload: {
-            id
+            index
         }
     }
 }

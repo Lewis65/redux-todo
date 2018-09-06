@@ -5,14 +5,13 @@ import {TOGGLE_TODO} from '../actions/actions'
 
 const List = (props) => (
   <div className="List">
-  {console.log(props)}
+    {console.log("props.todos", props.todos)}
     {
-      
       props.todos.map((todo, index) => {
-        return (
-          <Todo id={index} text="banana" status="incomplete"  onClick={props.handleTodoClick(index)} />
+        return(
+          <Todo id={index} text={todo.text} status="incomplete"  onClick={() => this.props.handleTodoClick(index)} />
         )
-      });
+      })
     }
   </div>
 );
@@ -25,13 +24,15 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    handleTodoClick: id =>
-      dispatch({
-        type: TOGGLE_TODO,
-        payload: {
-          id: id
-        }
-      })
+    handleTodoClick: (id) => 
+      {
+        dispatch({
+          type: TOGGLE_TODO,
+          payload: {
+            id: id
+          }
+        });
+      }
   }
 }
 

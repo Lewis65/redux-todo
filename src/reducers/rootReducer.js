@@ -2,9 +2,8 @@ import { ADD_TODO, TOGGLE_TODO } from '../actions/actions.js';
 
 const initialState = {
     todos: [{
-        id: 1,
         text: "Make redux-todo work",
-        status: "incomplete"
+        complete: false
     }],
     input: ""
 }
@@ -13,22 +12,23 @@ function rootReducer(state = initialState, action) {
     switch(action.type){
         case ADD_TODO:
             return Object.assign({}, state, {
-                todos: [...state.todos, {
+                todos: [...state.todos].concat({
                     text: action.payload.text,
                     complete: false
-                }],
-                input: ''
+                }),
+                input: ""
             });
         case TOGGLE_TODO:
+            let nextTodos = [...state.todos];
+            nextTodos.map((todo, index) => {
+                if(index == action.payload.index){
+                    nextTodos[index].status = "complete";
+                }
+            });
             return Object.assign({}, state, {
-                todos: state.todos.map((todo, index) => {
-                    if(index === action.payload.index){
-                        let nextState = Object.assign({}, state);
-                        nextState.todos[index].status = "complete";
-                        return nextState;
-                    }
-                })
-            })
+                todos: nextTodos
+                }
+            );
         default:
             return state;
     }
