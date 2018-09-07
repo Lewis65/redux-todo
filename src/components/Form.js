@@ -2,7 +2,7 @@ import React from 'react';
 import { ADD_TODO } from '../actions/actions';
 import { connect } from 'react-redux';
 
-class Form  extends React.Component {
+class Form extends React.Component {
 
   constructor(props){
     super(props);
@@ -28,13 +28,6 @@ class Form  extends React.Component {
     )
   }
 }
-
-/*const Form = (props) => (
-  <div className="Form">
-    <input placeholder="Next on the list..." value={props.input} onChange={() => props.handleChange}></input>
-    <button type="submit" onClick={() => props.handleAddTodo}>Submit</button>
-  </div>
-)*/
 
 const mapStateToProps = state => {
   return {

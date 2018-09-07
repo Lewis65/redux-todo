@@ -20,11 +20,7 @@ function rootReducer(state = initialState, action) {
             });
         case TOGGLE_TODO:
             let nextTodos = [...state.todos];
-            nextTodos.map((todo, index) => {
-                if(index == action.payload.index){
-                    nextTodos[index].status = "complete";
-                }
-            });
+            nextTodos[index].complete = !nextTodos[index].complete;
             return Object.assign({}, state, {
                 todos: nextTodos
                 }

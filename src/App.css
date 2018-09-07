@@ -23,11 +23,12 @@
 .Todo {
   align-items: center;
   display: flex;
+  margin: 12px 0;
 }
 
 .Todo-text, .Todo-toggle {
   border: #DDD 2px solid;
-  margin: 12px;
+  margin: 0 12px;
 }
 
 .Todo-text {
@@ -38,8 +39,14 @@
 
 .Todo-toggle {
   background-color: #FFF;
-  border-radius: 50%;
+  border-radius: 12px;
   height: 24px;
   margin: 12px 0;
   width: 24px;
+}
+
+.Todo-toggle .complete {
+  background-color: rgb(73, 199, 216);
+  color: #999;
+  text-decoration: line-through;
 }
