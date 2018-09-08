@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Todo from './Todo';
 import { connect } from 'react-redux';
-import {TOGGLE_TODO} from '../actions/actions'
 
 const List = (props) => (
   <div className="List">
@@ -9,7 +8,7 @@ const List = (props) => (
     {
       props.todos.map((todo, index) => {
         return(
-          <Todo id={index} text={todo.text} status="incomplete"  onClick={() => props.handleTodoClick(index)} />
+          <Todo id={index} text={todo.text} status="incomplete"  index={index} />
         )
       })
     }
@@ -22,18 +21,18 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
+/*const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    handleTodoClick: (index) => {
-      console.log("You clicked todo #" + index)
+    handleTodoClick: () => {
+      console.log("You clicked todo #" + ownProps.index)
       dispatch({
         type: TOGGLE_TODO,
         payload: {
-          index
+          index: ownProps.index
         }
       });
     }
   }
-}
+}*/
 
-export default connect(mapStateToProps, mapDispatchToProps)(List);
+export default connect(mapStateToProps, null)(List);
