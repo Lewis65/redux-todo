@@ -7,14 +7,26 @@
   display: flex;
 }
 
+.Form button {
+  border: 0;
+}
+
 .Form input {
+  border: 2px solid #DDD;
   flex-grow: 1;
 }
 
+.Form input:focus {
+  border: 2px solid rgb(0, 150, 7);
+}
+
 .Form input, .Form button{
-  border: none;
   border-radius: 16px;
   padding: 12px;
+}
+
+.Form input:focus, .Form button:focus {
+  outline: 0;
 }
 
 .Form button {

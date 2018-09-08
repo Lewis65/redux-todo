@@ -15,6 +15,7 @@ const Todo = (props) => (
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     handleTodoClick: () => {
+      document.getElementById("input").focus();
       dispatch({
         type: TOGGLE_TODO,
         payload: {
@@ -23,6 +24,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       });
     },
     handleTodoDelete: () => {
+      document.getElementById("input").focus();
       dispatch({
         type: DELETE_TODO,
         payload: {

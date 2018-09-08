@@ -3,7 +3,7 @@ import { ADD_TODO, TOGGLE_TODO, DELETE_TODO } from '../actions/actions.js';
 const initialState = {
     todos: [
         {
-            text: "Type a todo and click submit to add it",
+            text: "Type a todo and click submit or press enter to add it to the list",
             complete: false
         },
         {

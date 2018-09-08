@@ -10,20 +10,42 @@ class Form extends React.Component {
       input: ""
     }
     this.handleAddTodo = this.handleAddTodo.bind(this);
+    this.handleKeypress = this.handleKeypress.bind(this);
   }
 
   handleAddTodo(){
     this.props.handleAddTodo(this.state.input);
+    document.getElementById("input").focus();
     this.setState({
       input: ""
     })
   }
 
+  handleKeypress(e){
+    if(e.key == "Enter"){
+      this.handleAddTodo();
+    }
+  }
+
   render(){
     return(
       <div className="Form">
-        <input placeholder="Next on the list..." value={this.state.input} onChange={(e) => this.setState({input: e.target.value})}></input>
-        <button type="submit" onClick={this.handleAddTodo}>Submit</button>
+
+        <input 
+        autofocus="true" 
+        id="input" 
+        placeholder="Next on the list..." 
+        value={this.state.input} 
+        onChange={(e) => this.setState({input: e.target.value})} 
+        onKeyPress={this.handleKeypress}>
+        </input>
+
+        <button 
+        type="submit" 
+        onClick={this.handleAddTodo}>
+          Submit
+        </button>
+
       </div>
     )
   }
