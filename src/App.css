@@ -3,6 +3,14 @@
   width: 50%;
 }
 
+.Form {
+  display: flex;
+}
+
+.Form input {
+  flex-grow: 1;
+}
+
 .Form input, .Form button{
   border: none;
   border-radius: 16px;
@@ -10,9 +18,8 @@
 }
 
 .Form button {
-  background-color: #12E81B;
+  background-color: rgb(0, 150, 7);
   color: #FFF;
-  font-weight: bold;
 }
 
 .List{
@@ -26,27 +33,62 @@
   margin: 12px 0;
 }
 
-.Todo-text, .Todo-toggle {
-  border: #DDD 2px solid;
-  margin: 0 12px;
+.Todo-text:hover, .Todo-toggle:hover {
+  cursor: pointer;
 }
 
 .Todo-text {
   border-radius: 16px;
   flex-grow: 1;
-  padding: 12px;
+  padding: 12px 0;
+  word-wrap: break-word;
 }
 
 .Todo-toggle {
+  align-items: center;
   background-color: #FFF;
+  border: #DDD 2px solid;
   border-radius: 12px;
+  display: flex;
+  flex-shrink: 0;
   height: 24px;
-  margin: 12px 0;
+  justify-content: center;
+  margin: 12px 12px 12px 0;
   width: 24px;
 }
 
-.Todo-toggle .complete {
-  background-color: rgb(73, 199, 216);
+.Todo-toggle:hover .Todo-toggle-delete{
+  color:rgb(187, 53, 13);
+}
+
+.Todo-toggle-check {
+  color:  rgb(0, 150, 7);
+}
+
+.Todo-toggle-check, .Todo-toggle-delete{
+  display: none;
+  font-size: 18px;
+  height: 0px;
+  justify-content: center;
+  line-height: 0%;
+  overflow: visible;
+  width: 0px;
+}
+
+.Todo-complete .Todo-text {
   color: #999;
   text-decoration: line-through;
+}
+
+.Todo-complete .Todo-toggle .Todo-toggle-check{
+  text-decoration: none;
+  display: flex;
+}
+
+.Todo-toggle:hover .Todo-toggle-check{
+  display: none;
+}
+
+.Todo-toggle:hover .Todo-toggle-delete{
+  display: flex;
 }

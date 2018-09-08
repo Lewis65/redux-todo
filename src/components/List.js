@@ -8,7 +8,7 @@ const List = (props) => (
     {
       props.todos.map((todo, index) => {
         return(
-          <Todo id={index} text={todo.text} status="incomplete"  index={index} />
+          <Todo id={index} text={todo.text} status={todo.complete ? "complete":"incomplete"}  index={index} />
         )
       })
     }

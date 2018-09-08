@@ -19,3 +19,14 @@ export function toggleTodo(index){
         }
     }
 }
+
+export const DELETE_TODO = 'DELETE_TODO';
+
+export function deleteTodo(index){
+    return {
+        type: DELETE_TODO,
+        payload: {
+            index
+        }
+    }
+}
